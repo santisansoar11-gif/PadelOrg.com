@@ -1,16 +1,18 @@
-﻿:root {
-  --celeste: #74acdf;
-  --celeste-dark: #3d7eb5;
-  --celeste-light: #c5e0f5;
-  --celeste-pale: #e8f4fc;
-  --blanco: #ffffff;
-  --dorado: #fcbf49;
-  --dorado-dark: #e5a817;
-  --azul-texto: #1a3a5c;
-  --texto: #1e2d3d;
-  --texto-muted: #4a6278;
-  --borde: #b8d4ea;
-  --sombra: rgba(26, 58, 92, 0.12);
+/*
+ * Formatos de color (requerimiento docente)
+ * ─────────────────────────────────────────
+ * Título  → Nombre   (palabras clave: white, goldenrod / variables: var(--nombre))
+ * Fondo   → RGB      (rgb / rgba)
+ * Botón   → HSL      (hsl / hsla)
+ * Menú    → HEX      (#...)
+ */
+
+:root {
+  --titulo-principal: #1a3a5c;
+  --titulo-secundario: #3d7eb5;
+  --titulo-dorado: #fcbf49;
+  --titulo-texto: #1e2d3d;
+  --titulo-claro: #c5e0f5;
 }
 
 * {
@@ -21,11 +23,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ── FONDO (formato: RGB) ── */
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(160deg, var(--celeste-pale) 0%, var(--blanco) 45%, var(--celeste-light) 100%);
-  color: var(--texto);
+  background: linear-gradient(160deg, rgb(232, 244, 252) 0%, rgb(255, 255, 255) 45%, rgb(197, 224, 245) 100%);
+  color: rgb(30, 45, 61);
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -37,21 +40,20 @@ img {
 }
 
 a {
-  color: var(--celeste-dark);
+  color: rgb(61, 126, 181);
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: var(--azul-texto);
+  color: rgb(26, 58, 92);
   text-decoration: underline;
 }
 
-/* ── Encabezado del sitio ── */
 .site-header {
-  background: linear-gradient(135deg, var(--celeste) 0%, var(--celeste-dark) 100%);
-  border-bottom: 4px solid var(--dorado);
-  box-shadow: 0 4px 20px var(--sombra);
+  background: linear-gradient(135deg, rgb(116, 172, 223) 0%, rgb(61, 126, 181) 100%);
+  border-bottom: 4px solid rgb(252, 191, 73);
+  box-shadow: 0 4px 20px rgba(26, 58, 92, 0.12);
 }
 
 .site-header__inner {
@@ -69,34 +71,35 @@ a:hover {
   width: 90px;
   height: 90px;
   border-radius: 16px;
-  border: 3px solid var(--dorado);
+  border: 3px solid rgb(252, 191, 73);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   object-fit: cover;
   flex-shrink: 0;
 }
 
+/* ── TÍTULOS (formato: Nombre) ── */
 .site-title {
   margin: 0;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  color: var(--blanco);
+  color: white;
   line-height: 1.2;
 }
 
 .site-tagline {
   margin: 6px 0 0;
-  color: var(--celeste-light);
+  color: var(--titulo-claro);
   font-size: 0.95rem;
   max-width: 600px;
 }
 
-/* ── Navegación ── */
+/* ── MENÚ (formato: HEX) ── */
 .site-nav {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: var(--blanco);
-  border-bottom: 3px solid var(--dorado);
-  box-shadow: 0 2px 12px var(--sombra);
+  background: #ffffff;
+  border-bottom: 3px solid #fcbf49;
+  box-shadow: 0 2px 12px #1a3a5c1f;
 }
 
 .site-nav__inner {
@@ -132,7 +135,7 @@ a:hover {
   display: inline-block;
   padding: 7px 13px;
   border-radius: 999px;
-  color: var(--azul-texto);
+  color: #1a3a5c;
   font-weight: 600;
   font-size: 0.84rem;
   white-space: nowrap;
@@ -142,12 +145,11 @@ a:hover {
 }
 
 .site-nav a:hover {
-  background: var(--celeste);
-  color: var(--blanco);
+  background: #74acdf;
+  color: #ffffff;
   text-decoration: none;
 }
 
-/* ── Contenedor principal ── */
 .page-content {
   max-width: 1100px;
   margin: 0 auto;
@@ -156,7 +158,7 @@ a:hover {
 
 .page-content > h1 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: var(--azul-texto);
+  color: var(--titulo-principal);
   text-align: center;
   margin: 0 0 12px;
   line-height: 1.2;
@@ -164,7 +166,7 @@ a:hover {
 
 .page-content > h2 {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
-  color: var(--celeste-dark);
+  color: var(--titulo-secundario);
   text-align: center;
   font-weight: 600;
   margin: 0 0 28px;
@@ -173,28 +175,28 @@ a:hover {
 
 .page-content > h3 {
   font-size: 1.25rem;
-  color: var(--azul-texto);
+  color: var(--titulo-principal);
   margin: 32px 0 12px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--dorado);
+  border-bottom: 2px solid var(--titulo-dorado);
 }
 
 .page-content > h4 {
   font-size: 1.05rem;
-  color: var(--celeste-dark);
+  color: var(--titulo-secundario);
   margin: 20px 0 8px;
 }
 
 .page-content > p {
   margin: 0 0 16px;
-  color: var(--texto);
+  color: var(--titulo-texto);
   text-align: justify;
 }
 
 .page-content > ul {
   margin: 0 0 24px;
   padding-left: 24px;
-  color: var(--texto);
+  color: var(--titulo-texto);
 }
 
 .page-content > ul li {
@@ -202,18 +204,18 @@ a:hover {
 }
 
 .page-content strong {
-  color: var(--celeste-dark);
+  color: var(--titulo-secundario);
 }
 
-/* ── Tarjetas ── */
+/* ── Tarjetas (fondo: RGB) ── */
 .card {
-  background: var(--blanco);
-  border: 1px solid var(--borde);
-  border-left: 4px solid var(--celeste);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(184, 212, 234);
+  border-left: 4px solid rgb(116, 172, 223);
   border-radius: 12px;
   padding: 20px 24px;
   margin: 20px 0;
-  box-shadow: 0 6px 20px var(--sombra);
+  box-shadow: 0 6px 20px rgba(26, 58, 92, 0.12);
 }
 
 .card p {
@@ -245,22 +247,22 @@ a:hover {
   max-width: none;
 }
 
-/* ── Artículos del blog ── */
+/* ── Artículos del blog (fondo: RGB) ── */
 article {
-  background: var(--blanco);
-  border: 1px solid var(--borde);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(184, 212, 234);
   border-radius: 16px;
   padding: 28px 32px;
   margin: 28px 0;
-  box-shadow: 0 8px 28px var(--sombra);
+  box-shadow: 0 8px 28px rgba(26, 58, 92, 0.12);
 }
 
 article h3 {
   font-size: 1.3rem;
-  color: var(--azul-texto);
+  color: var(--titulo-principal);
   margin: 0 0 12px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--dorado);
+  border-bottom: 2px solid var(--titulo-dorado);
 }
 
 article p {
@@ -271,10 +273,9 @@ article p {
 article img {
   margin-top: 16px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px var(--sombra);
+  box-shadow: 0 8px 24px rgba(26, 58, 92, 0.12);
 }
 
-/* ── Galería de imágenes ── */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -286,8 +287,8 @@ article img {
 .page-content > img {
   width: 100%;
   border-radius: 12px;
-  border: 2px solid var(--borde);
-  box-shadow: 0 8px 24px var(--sombra);
+  border: 2px solid rgb(184, 212, 234);
+  box-shadow: 0 8px 24px rgba(26, 58, 92, 0.12);
   margin: 0 auto;
 }
 
@@ -297,7 +298,7 @@ article img {
   margin: 24px auto;
 }
 
-/* ── Botones y enlaces de acción ── */
+/* ── BOTONES (formato: HSL) ── */
 .btn,
 .page-content > p > a,
 input[type="submit"],
@@ -305,8 +306,8 @@ input[type="button"],
 button[type="button"],
 button[type="submit"] {
   display: inline-block;
-  background: linear-gradient(135deg, var(--celeste-dark), var(--celeste));
-  color: var(--blanco) !important;
+  background: linear-gradient(135deg, hsl(207, 50%, 47%), hsl(207, 63%, 66%));
+  color: hsl(0, 0%, 100%) !important;
   font-weight: 700;
   padding: 12px 28px;
   border-radius: 999px;
@@ -314,7 +315,7 @@ button[type="submit"] {
   cursor: pointer;
   text-decoration: none !important;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 6px 16px rgba(61, 126, 181, 0.3);
+  box-shadow: 0 6px 16px hsla(207, 50%, 47%, 0.3);
   font-size: 1rem;
 }
 
@@ -323,8 +324,8 @@ button[type="submit"] {
 input[type="submit"]:hover,
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(61, 126, 181, 0.4);
-  color: var(--blanco) !important;
+  box-shadow: 0 10px 24px hsla(207, 50%, 47%, 0.4);
+  color: hsl(0, 0%, 100%) !important;
   text-decoration: none !important;
 }
 
@@ -333,14 +334,14 @@ button:hover {
   margin-top: 28px;
 }
 
-/* ── Formularios ── */
+/* ── Formularios (fondo: RGB) ── */
 form {
-  background: var(--blanco);
-  border: 1px solid var(--borde);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(184, 212, 234);
   border-radius: 16px;
   padding: 28px 32px;
   margin: 24px 0;
-  box-shadow: 0 8px 28px var(--sombra);
+  box-shadow: 0 8px 28px rgba(26, 58, 92, 0.12);
   max-width: 600px;
 }
 
@@ -349,7 +350,7 @@ form label {
   margin-top: 16px;
   margin-bottom: 6px;
   font-weight: 700;
-  color: var(--azul-texto);
+  color: var(--titulo-principal);
 }
 
 form label:first-of-type {
@@ -365,19 +366,19 @@ form select {
   width: 100%;
   font: inherit;
   border-radius: 8px;
-  border: 1px solid var(--borde);
+  border: 1px solid rgb(184, 212, 234);
   padding: 11px 14px;
-  background: var(--celeste-pale);
-  color: var(--texto);
+  background: rgb(232, 244, 252);
+  color: rgb(30, 45, 61);
   transition: border-color 0.2s, outline 0.2s;
 }
 
 form input:focus,
 form textarea:focus,
 form select:focus {
-  outline: 2px solid var(--celeste);
-  border-color: var(--celeste-dark);
-  background: var(--blanco);
+  outline: 2px solid rgb(116, 172, 223);
+  border-color: rgb(61, 126, 181);
+  background: rgb(255, 255, 255);
 }
 
 form textarea {
@@ -411,10 +412,10 @@ form button {
   width: auto;
 }
 
-/* ── Pie de página ── */
+/* ── Pie de página (fondo: RGB) ── */
 .site-footer {
-  background: var(--azul-texto);
-  color: var(--celeste-light);
+  background: rgb(26, 58, 92);
+  color: rgb(197, 224, 245);
   text-align: center;
   padding: 28px 20px;
   margin-top: 0;
@@ -422,26 +423,24 @@ form button {
 
 .site-footer p {
   margin: 4px 0;
-  color: var(--celeste-light);
+  color: rgb(197, 224, 245);
 }
 
 .site-footer strong {
-  color: var(--dorado);
+  color: var(--titulo-dorado);
 }
 
 .site-footer hr {
   display: none;
 }
 
-/* ── Separador ── */
 hr {
   border: 0;
-  border-top: 2px solid var(--borde);
+  border-top: 2px solid rgb(184, 212, 234);
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .site-header__inner {
     flex-direction: column;
