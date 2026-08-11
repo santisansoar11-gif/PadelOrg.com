@@ -414,8 +414,8 @@ form button {
 
 /* ── Pie de página (fondo: RGB) ── */
 .site-footer {
-  background: rgb(26, 58, 92);
-  color: rgb(197, 224, 245);
+  background: hsl(211, 45%, 23%);
+  color: hsl(209, 54%, 85%);
   text-align: center;
   padding: 28px 20px;
   margin-top: 0;
@@ -423,7 +423,7 @@ form button {
 
 .site-footer p {
   margin: 4px 0;
-  color: rgb(197, 224, 245);
+  color: hsl(209, 54%, 85%);
 }
 
 .site-footer strong {
@@ -439,6 +439,327 @@ hr {
   border-top: 2px solid rgb(184, 212, 234);
   max-width: 1100px;
   margin: 0 auto;
+}
+
+/* ── JavaScript: barra de fecha/hora y modo oscuro ── */
+.js-toolbar {
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(184, 212, 234);
+}
+
+.js-toolbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.js-datetime {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--titulo-principal);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--titulo-principal);
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: rgb(61, 126, 181);
+}
+
+.js-section {
+  margin-top: 40px;
+}
+
+/* ── Modo oscuro ── */
+body.dark-mode {
+  background: linear-gradient(160deg, rgb(15, 25, 38) 0%, rgb(22, 35, 50) 45%, rgb(10, 20, 32) 100%);
+  color: rgb(220, 230, 240);
+}
+
+body.dark-mode .site-nav {
+  background: #1a2a3a;
+  border-bottom-color: #c9952e;
+}
+
+body.dark-mode .site-nav a {
+  color: #c5e0f5;
+}
+
+body.dark-mode .site-nav a:hover {
+  background: #3d7eb5;
+  color: #ffffff;
+}
+
+body.dark-mode .page-content > p,
+body.dark-mode .page-content > ul,
+body.dark-mode article p {
+  color: rgb(210, 220, 230);
+}
+
+body.dark-mode .page-content > h1,
+body.dark-mode .page-content > h3,
+body.dark-mode .card,
+body.dark-mode article,
+body.dark-mode form,
+body.dark-mode .js-toolbar {
+  background: transparent;
+}
+
+body.dark-mode .card,
+body.dark-mode article,
+body.dark-mode form,
+body.dark-mode .accordion__item,
+body.dark-mode .gallery__viewer,
+body.dark-mode .resumen-modal__content {
+  background: rgb(30, 45, 61);
+  border-color: rgb(61, 90, 120);
+  color: rgb(220, 230, 240);
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea,
+body.dark-mode form select {
+  background: rgb(20, 32, 48);
+  border-color: rgb(61, 90, 120);
+  color: rgb(230, 240, 250);
+}
+
+body.dark-mode .js-datetime,
+body.dark-mode .theme-toggle,
+body.dark-mode form label {
+  color: rgb(197, 224, 245);
+}
+
+/* ── Acordeón ── */
+.accordion {
+  margin: 20px 0;
+}
+
+.accordion__item {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(184, 212, 234);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(26, 58, 92, 0.08);
+}
+
+.accordion__header {
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, hsl(207, 50%, 47%), hsl(207, 63%, 66%));
+  color: hsl(0, 0%, 100%);
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.accordion__header:hover {
+  opacity: 0.92;
+}
+
+.accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.accordion__panel--open {
+  max-height: 200px;
+  padding: 16px 20px;
+}
+
+.accordion__panel p {
+  margin: 0;
+}
+
+/* ── Galería ── */
+.gallery {
+  margin: 24px 0;
+}
+
+.gallery__viewer {
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(184, 212, 234);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(26, 58, 92, 0.12);
+}
+
+.gallery__viewer img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.gallery__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.gallery__counter {
+  font-weight: 700;
+  color: var(--titulo-principal);
+  min-width: 60px;
+  text-align: center;
+}
+
+.gallery__thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.gallery__thumb {
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  width: 90px;
+  height: 70px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__thumb--active,
+.gallery__thumb:hover {
+  border-color: rgb(252, 191, 73);
+  transform: scale(1.05);
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* ── Errores de formulario ── */
+.form-error {
+  display: block;
+  color: rgb(180, 40, 40);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
+
+body.dark-mode .form-error {
+  color: rgb(255, 130, 130);
+}
+
+/* ── Modal de resumen ── */
+.resumen-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 58, 92, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  padding: 20px;
+}
+
+.resumen-modal[hidden] {
+  display: none;
+}
+
+.resumen-modal__content {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 28px 32px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 12px 40px rgba(26, 58, 92, 0.25);
+}
+
+.resumen-modal__content h4 {
+  margin: 0 0 8px;
+  color: var(--titulo-principal);
+  font-size: 1.2rem;
+}
+
+.resumen-lista {
+  margin: 16px 0 24px;
+  padding-left: 20px;
+}
+
+.resumen-lista li {
+  margin-bottom: 8px;
+}
+
+.resumen-modal__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn--secondary {
+  background: linear-gradient(135deg, hsl(0, 0%, 45%), hsl(0, 0%, 55%)) !important;
+  box-shadow: 0 6px 16px hsla(0, 0%, 30%, 0.3) !important;
 }
 
 @media (max-width: 768px) {
@@ -466,5 +787,15 @@ hr {
   form,
   .card {
     padding: 18px 16px;
+  }
+
+  .js-toolbar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gallery__thumb {
+    width: 72px;
+    height: 56px;
   }
 }
