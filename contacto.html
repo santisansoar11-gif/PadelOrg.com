@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Padel Tournament Organizer para consultar torneos, cursos, reservas de cancha y productos de padel.">
+    <title>Contacto | Padel Tournament Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <img src="padel.jpg" alt="Logo de Padel Tournament Organizer" class="site-logo" loading="lazy" width="90" height="90">
+            <div>
+                <h1 class="site-title">Padel Tournament Organizer</h1>
+                <p class="site-tagline">Esta página está creada para la organización de torneos de padel, tanto para hombres como para mujeres.</p>
+            </div>
+        </div>
+    </header>
+    <nav class="site-nav">
+        <div class="site-nav__inner">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="torneos-de-padel.html">Torneos</a></li>
+                <li><a href="acerca-de-nosotros.html">Nosotros</a></li>
+                <li><a href="canchas.html">Canchas</a></li>
+                <li><a href="preguntas-frecuentes.html">Preguntas</a></li>
+                <li><a href="cursos-de-padel.html">Cursos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="cv.html">Currículum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="js-toolbar">
+        <div class="js-toolbar__inner">
+            <p class="js-datetime" id="js-datetime" aria-live="polite">Cargando fecha y hora…</p>
+            <label class="theme-toggle">
+                <span>Modo oscuro</span>
+                <input type="checkbox" id="theme-toggle" aria-label="Activar modo oscuro">
+            </label>
+        </div>
+    </div>
+
+    <main class="page-content">
+        <h1>Contacto para torneos de padel</h1>
+        <h2>Contacto con nuestra organización</h2>
+        <p>¿Tienes alguna pregunta o necesitas información? Estamos aquí para ayudarte con cualquier duda sobre torneos, cursos o servicios. Si buscas reservar una cancha, inscribirte a un evento o consultar productos, nuestro equipo te responderá con la mejor orientación posible.</p>
+        <p>La comunicación es una parte esencial de la experiencia deportiva. Por eso, queremos que cada consulta sea clara, rápida y útil. Ya sea que estés buscando una categoría para tu próximo torneo, una cancha para entrenar o información sobre cursos y equipamiento, te brindaremos una respuesta precisa y cordial para tomar la mejor decisión.</p>
+        <p>Nuestro equipo trabaja para que cada jugador reciba información útil y oportuna. En Padel Tournament Organizer valoramos la atención personalizada, porque entendemos que cada persona tiene objetivos distintos: algunos buscan mejorar su técnica, otros competir en un torneo, y también hay quienes desean coordinar un espacio para jugar con amigos. Por eso, te invitamos a escribirnos con tranquilidad y contarnos lo que necesitas.</p>
+
+        <h3>Información de contacto</h3>
+        <p><strong>Email:</strong> santisansoar11@gmail.com</p>
+
+        <h3>Envíanos un mensaje</h3>
+        <form action="contacto.php" method="post" data-validate novalidate>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <span class="form-error" id="error-nombre" role="alert"></span>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="form-error" id="error-email" role="alert"></span>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <span class="form-error" id="error-mensaje" role="alert"></span>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Padel Tournament Organizer</strong></p>
+        <p>Email: santisansoar11@gmail.com</p>
+        <p>&copy; 2026 Padel Tournament Organizer. Todos los derechos reservados.</p>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+</html>
